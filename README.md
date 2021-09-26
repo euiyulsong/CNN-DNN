@@ -21,34 +21,34 @@
 
 ### CNN
 
-I used first three blocks of the VGG16 model consisted of Conv2D and MaxPooling layers to build a CNN class, optimized with Adam, and used categorical cross entropy as a loss function. This model was run with epoch of 10 and the model showed low training and test accuracy, implying high bias and variance. Thus, I increased the epoch to 50; added L2 activity regularizer, and L1 kernel regularizer on the Dense layers; appended He uniform kernel initializer on the Conv2D layers. I also experimented the CNN model with MSE, Categorical Hinge, and Adagrad, but they were more over-fitted and under-fitted than Adam and Categorical Cross Entropy did. Hence, I maintain Adam and SCC for the final CNN. The final model settings, and its loss and accuracy plot of the CNN model are as follows:
+#### I used first three blocks of the VGG16 model consisted of Conv2D and MaxPooling layers to build a CNN class, optimized with Adam, and used categorical cross entropy as a loss function. This model was run with epoch of 10 and the model showed low training and test accuracy, implying high bias and variance. Thus, I increased the epoch to 50; added L2 activity regularizer, and L1 kernel regularizer on the Dense layers; appended He uniform kernel initializer on the Conv2D layers. I also experimented the CNN model with MSE, Categorical Hinge, and Adagrad, but they were more over-fitted and under-fitted than Adam and Categorical Cross Entropy did. Hence, I maintain Adam and SCC for the final CNN. The final model settings, and its loss and accuracy plot of the CNN model are as follows:
 
-Setting
+#### Setting
 ![](img/model_setting_cnn.png)
 
-Structure
+#### Structure
 ![](img/cnn_model.png)
 
-Accuracy
+#### Accuracy
 ![](img/cnn_accuracy.png)
 
-Plot
+#### Plot
 ![](img/cnn_plot.png)
 
 ### FCNN
 
-I intuited that maintaining the regularizers, model structures, optimizer, and loss function of the CNN model on the FCNN model will yield best performance, and the FCNN will have less performance than the CNN have. My intuition was correct that 3 block architecture, an Adam optimizer, and a Sparse Categorical CrossEntropy loss function showed best training and test accuracy when tested with other optimizers, model structures, and loss functions. Also, the FCNN had lower training and test accuracy than the CNN had when tested with same hyper-parameters.The final results are:
+#### I intuited that maintaining the regularizers, model structures, optimizer, and loss function of the CNN model on the FCNN model will yield best performance, and the FCNN will have less performance than the CNN have. My intuition was correct that 3 block architecture, an Adam optimizer, and a Sparse Categorical CrossEntropy loss function showed best training and test accuracy when tested with other optimizers, model structures, and loss functions. Also, the FCNN had lower training and test accuracy than the CNN had when tested with same hyper-parameters.The final results are:
 
-Setting
+#### Setting
 ![](img/model_setting_cnn.png)
 
-Structure
+#### Structure
 ![](img/fcnn_2.png)
 
-Accuracy
+#### Accuracy
 ![](img/fcnn_4.png)
 
-Plot
+#### Plot
 ![](img/fcnn_3.png)
 
 ## Comparison between FCNN and CNN
@@ -63,7 +63,7 @@ Plot
 | number of parameters  | 698,154 | 148,298 |
 
 #### Interpretation
-The CNN trained well on its data but it okay when tested. Thus, simplifying the model, adding early stopping, using data augmentation, and adding dropouts are recommended for the future usages.
+#### The CNN trained well on its data but it okay when tested. Thus, simplifying the model, adding early stopping, using data augmentation, and adding dropouts are recommended for the future usages.
 
 ## Affecting parameters
 
